@@ -43,7 +43,7 @@ export interface ProductCardProps {
 }
 
 export const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
-  ({ id, name, brand, price, image, badge, onHover, className, priority = false }, ref) => {
+  ({ id, name, brand, image, badge, onHover, className, priority = false }, ref) => {
     return (
       <motion.div
         ref={ref}

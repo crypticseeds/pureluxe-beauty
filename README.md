@@ -19,7 +19,7 @@ Pureluxe Beauty is your destination for premium skincare solutions and professio
 
 ### Core Framework
 
-- **Next.js 15.4.4** with App Router and React 19
+- **Next.js 15.4.4 - LTS** with App Router and React 19
 - **TypeScript 5** with strict mode for enhanced code quality
 - **Tailwind CSS 4** with custom design system
 
@@ -49,7 +49,7 @@ Pureluxe Beauty is your destination for premium skincare solutions and professio
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone git@github.com:crypticseeds/pureluxe-beauty.git
 cd pureluxe-beauty
 ```
 
@@ -195,7 +195,7 @@ npm run start       # Starts production server locally
 Create a `.env.local` file for environment-specific configurations:
 
 ```env
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
+NEXT_PUBLIC_SITE_URL=https://pureluxebeauty.com
 NEXT_PUBLIC_WHATSAPP_NUMBER=your-whatsapp-number
 ```
 

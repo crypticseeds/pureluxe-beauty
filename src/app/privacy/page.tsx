@@ -149,7 +149,7 @@ export default function PrivacyPage() {
                 </h2>
                 <p className="text-gray-600 leading-relaxed">
                   When you contact us through WhatsApp for product inquiries or customer support, your messages 
-                  and contact information are subject to WhatsApp's privacy policy in addition to ours. We use 
+                  and contact information are subject to WhatsApp&apos;s privacy policy in addition to ours. We use 
                   WhatsApp communications solely for customer service purposes and do not share this information 
                   with third parties.
                 </p>
@@ -162,7 +162,7 @@ export default function PrivacyPage() {
                 <p className="text-gray-600 leading-relaxed">
                   We reserve the right to update this privacy policy at any time to reflect changes in our 
                   practices or legal requirements. We will notify you of any significant changes by posting 
-                  the new privacy policy on this page and updating the "Last Updated&quot; date below. We encourage 
+                  the new privacy policy on this page and updating the &quot;Last Updated&quot; date below. We encourage 
                   you to review this policy periodically.
                 </p>
               </section>

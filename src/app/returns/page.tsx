@@ -22,8 +22,8 @@ export default function ReturnsPage() {
                 </h2>
                 <p className="text-gray-600 leading-relaxed">
                   Our refund and returns policy lasts 7 days. If 7 days have passed since your purchase, 
-                  we can't offer you a full refund or exchange. We understand that beauty products are 
-                  personal, so we've designed our policy to give you adequate time to evaluate your purchase.
+                  we can&apos;t offer you a full refund or exchange. We understand that beauty products are 
+                  personal, so we&apos;ve designed our policy to give you adequate time to evaluate your purchase.
                 </p>
               </section>
 
@@ -99,13 +99,13 @@ export default function ReturnsPage() {
                   Late or Missing Refunds
                 </h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  If you haven't received a refund yet, please follow these steps:
+                  If you haven&apos;t received a refund yet, please follow these steps:
                 </p>
                 <ol className="list-decimal pl-6 text-gray-600 space-y-2">
                   <li>First check your bank account again</li>
                   <li>Contact your credit card company - it may take some time before your refund is officially posted</li>
                   <li>Contact your bank - there is often some processing time before a refund is posted</li>
-                  <li>If you've done all of this and still haven't received your refund, please contact us</li>
+                  <li>If you&apos;ve done all of this and still haven&apos;t received your refund, please contact us</li>
                 </ol>
               </section>
 
@@ -136,11 +136,11 @@ export default function ReturnsPage() {
                 </h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
                   <strong>Items marked as gifts:</strong> If the item was marked as a gift when purchased 
-                  and shipped directly to you, you'll receive a gift credit for the value of your return. 
+                  and shipped directly to you, you&apos;ll receive a gift credit for the value of your return. 
                   Once the returned item is received, a gift certificate will be mailed to you.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  <strong>Items not marked as gifts:</strong> If the item wasn't marked as a gift when 
+                  <strong>Items not marked as gifts:</strong> If the item wasn&apos;t marked as a gift when 
                   purchased, or the gift giver had the order shipped to themselves to give to you later, 
                   we will send a refund to the gift giver and they will find out about your return.
                 </p>
@@ -174,7 +174,7 @@ export default function ReturnsPage() {
                 </div>
                 <p className="text-gray-600 leading-relaxed">
                   If you are returning expensive beauty items, you may consider using a trackable shipping 
-                  service or purchasing shipping insurance. We don't guarantee that we will receive your 
+                  service or purchasing shipping insurance. We don&apos;t guarantee that we will receive your 
                   returned item if sent without tracking.
                 </p>
               </section>
