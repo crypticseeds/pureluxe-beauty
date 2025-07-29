@@ -33,7 +33,7 @@ Best regards,
 ${formData.fullName}`
 
   return {
-    to: 'info@pureluxebeauty.com', // Business email
+    to: 'help@pureluxebeauti.com', // Business email
     subject,
     body
   }
@@ -53,7 +53,7 @@ export function openEmailClient(formData: RequestFormData): void {
     window.open(mailtoUrl, '_self')
   } catch {
     // Fallback: copy email to clipboard or show error message
-    alert('Unable to open email client. Please contact us directly at info@pureluxebeauty.com')
+    alert('Unable to open email client. Please contact us directly at help@pureluxebeauti.com')
   }
 }
 

@@ -133,11 +133,11 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-pink-400 flex-shrink-0" aria-hidden="true" />
                 <a
-                  href="mailto:info@pureluxebeauty.com"
+                  href="mailto:help@pureluxebeauti.com"
                   className="text-sm text-gray-300 hover:text-pink-400 transition-colors focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 focus:ring-offset-gray-900 rounded"
                   aria-label="Email Pureluxe Beauty"
                 >
-                  info@pureluxebeauty.com
+                  help@pureluxebeauti.com
                 </a>
               </div>
             </div>

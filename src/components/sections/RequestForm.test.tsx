@@ -194,7 +194,7 @@ describe('RequestForm', () => {
     
     expect(screen.getByText(/need immediate assistance/i)).toBeInTheDocument()
     expect(screen.getByRole('link', { name: /📞 \+2349066130009/i })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /✉️ info@pureluxebeauty.com/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /✉️ help@pureluxebeauti.com/i })).toBeInTheDocument()
   })
 
   it('applies custom className', () => {

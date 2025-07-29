@@ -89,8 +89,8 @@ export function getFallbackContactOptions() {
       url: `sms:${formatPhoneNumber(WHATSAPP_CONFIG.businessNumber)}`
     },
     email: {
-      address: 'info@pureluxebeauty.com', // Replace with actual email
-      url: 'mailto:info@pureluxebeauty.com?subject=Product Request'
+      address: 'help@pureluxebeauti.com', // Replace with actual email
+      url: 'mailto:help@pureluxebeauti.com?subject=Product Request'
     }
   }
 }

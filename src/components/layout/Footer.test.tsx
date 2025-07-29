@@ -29,7 +29,7 @@ describe('Footer', () => {
     expect(screen.getByText(/Your trusted destination for premium beauty products/)).toBeInTheDocument()
     expect(screen.getByText(/123 Beauty Street, Victoria Island/)).toBeInTheDocument()
     expect(screen.getByText('+234 812 345 6789')).toBeInTheDocument()
-    expect(screen.getByText('info@pureluxebeauty.com')).toBeInTheDocument()
+    expect(screen.getByText('help@pureluxebeauti.com')).toBeInTheDocument()
   })
 
   it('renders quick links section', () => {
@@ -119,7 +119,7 @@ describe('Footer', () => {
     expect(phoneLink).toHaveAttribute('href', 'tel:+2348123456789')
     
     const emailLink = screen.getByLabelText('Email Pureluxe Beauty')
-    expect(emailLink).toHaveAttribute('href', 'mailto:info@pureluxebeauty.com')
+    expect(emailLink).toHaveAttribute('href', 'mailto:help@pureluxebeauti.com')
   })
 
   it('has proper accessibility attributes', () => {

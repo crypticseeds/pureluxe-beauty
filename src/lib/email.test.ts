@@ -33,7 +33,7 @@ describe('email utilities', () => {
 
       const result = generateProductRequestEmail(formData)
 
-      expect(result.to).toBe('info@pureluxebeauty.com')
+      expect(result.to).toBe('help@pureluxebeauti.com')
       expect(result.subject).toBe('Product Request: Vitamin C Serum')
       expect(result.body).toContain('Jane Doe')
       expect(result.body).toContain('jane@example.com')
@@ -71,7 +71,7 @@ describe('email utilities', () => {
       openEmailClient(formData)
 
       expect(mockWindowOpen).toHaveBeenCalledWith(
-        expect.stringContaining('mailto:info@pureluxebeauty.com'),
+        expect.stringContaining('mailto:help@pureluxebeauti.com'),
         '_self'
       )
       
@@ -97,7 +97,7 @@ describe('email utilities', () => {
       openEmailClient(formData)
 
       expect(mockAlert).toHaveBeenCalledWith(
-        'Unable to open email client. Please contact us directly at info@pureluxebeauty.com'
+        'Unable to open email client. Please contact us directly at help@pureluxebeauti.com'
       )
     })
   })

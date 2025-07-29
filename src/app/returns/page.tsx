@@ -199,7 +199,7 @@ export default function ReturnsPage() {
                 </p>
                 <div className="bg-pink-50 p-6 rounded-lg">
                   <p className="text-gray-700 mb-2">
-                    <strong>Email:</strong> info@pureluxebeauty.com
+                    <strong>Email:</strong> help@pureluxebeauti.com
                   </p>
                   <p className="text-gray-700 mb-2">
                     <strong>Phone:</strong> +234 906 613 0009

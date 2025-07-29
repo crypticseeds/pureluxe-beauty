@@ -15,7 +15,7 @@ export function StructuredData() {
       "https://pureluxebeauty.com/banner.jpeg"
     ],
     "telephone": "+234 812 345 6789",
-    "email": "info@pureluxebeauty.com",
+    "email": "help@pureluxebeauti.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "123 Beauty Street",
