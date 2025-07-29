@@ -67,6 +67,20 @@ npm run dev
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
+### Quick Start: Adding Product Images
+
+To quickly add images to existing products:
+
+```bash
+# Example: Add more images to product na-001
+cp your-new-image.jpg pureluxe-beauty/public/products/na-001/detail-3.jpg
+
+# Update configuration in src/data/productImages.ts
+# Add IMAGE_NAMES.DETAIL_3 to the na-001 array
+
+# The gallery will automatically show the new image!
+```
+
 ## 📋 Available Scripts
 
 ### Development
@@ -145,10 +159,13 @@ npm run test:run    # Single run for CI/CD
 
 ### Product Management
 
-- Dynamic product catalog with filtering capabilities
-- Product badges (New, Trending, Best Seller)
-- Detailed product information with pricing
-- Category-based organization
+- **Multi-Image Product Gallery** - Interactive image galleries with navigation controls
+- **Dynamic Product Catalog** - Filtering capabilities with real-time updates
+- **Product Badges** - Visual indicators (New, Trending, Best Seller)
+- **Detailed Product Information** - Comprehensive descriptions with pricing in ₦
+- **Category-based Organization** - Intuitive product categorization
+- **Visual Indicators** - Camera icons show available image count
+- **Responsive Gallery** - Touch-friendly navigation on mobile devices
 
 ### Service Booking
 
@@ -188,6 +205,100 @@ npm run build       # Creates optimized production build
 npm run start       # Starts production server locally
 ```
 
+## 🖼️ Local Image Management System
+
+The application features a sophisticated local image management system that supports multi-image product galleries with optimized performance and easy maintenance.
+
+### Image Structure
+
+```
+pureluxe-beauty/public/products/
+├── na-001/                    # Product ID folder
+│   ├── main.jpg              # Primary product image (required)
+│   ├── detail-1.jpg          # Additional detail view
+│   └── detail-2.jpg          # Additional detail view
+├── na-002/
+│   ├── main.jpg
+│   └── detail-1.jpg
+└── tr-001/
+    ├── main.jpg
+    ├── detail-1.jpg
+    └── detail-2.jpg
+```
+
+### Adding New Product Images
+
+#### 1. Add Images to Product Folder
+
+```bash
+# Create product folder (if new product)
+mkdir pureluxe-beauty/public/products/your-product-id
+
+# Add images to the folder
+cp your-main-image.jpg pureluxe-beauty/public/products/your-product-id/main.jpg
+cp your-detail-1.jpg pureluxe-beauty/public/products/your-product-id/detail-1.jpg
+cp your-detail-2.jpg pureluxe-beauty/public/products/your-product-id/detail-2.jpg
+```
+
+#### 2. Update Configuration
+
+Edit `src/data/productImages.ts`:
+
+```typescript
+export const PRODUCT_IMAGE_CONFIG = {
+  'your-product-id': [IMAGE_NAMES.MAIN, IMAGE_NAMES.DETAIL_1, IMAGE_NAMES.DETAIL_2],
+  // ... existing products
+}
+```
+
+#### 3. Automatic Integration
+
+The system automatically:
+- ✅ Generates optimized image paths
+- ✅ Creates gallery navigation
+- ✅ Handles single or multiple images
+- ✅ Provides fallback support
+- ✅ Optimizes images with Next.js
+
+### Image Naming Convention
+
+- `main.jpg` - Primary product image (always required)
+- `detail-1.jpg` - First additional detail view
+- `detail-2.jpg` - Second additional detail view
+- `detail-3.jpg` - Third additional detail view
+- `packaging.jpg` - Product packaging view
+- `ingredients.jpg` - Ingredients/formula view
+- `application.jpg` - Application demonstration
+
+### Gallery Features
+
+- **Multi-Image Support** - Products can have 1-10+ images
+- **Interactive Gallery** - Click product cards to open full gallery
+- **Navigation Controls** - Arrow buttons, thumbnails, keyboard navigation
+- **Visual Indicators** - Camera icon shows image count
+- **Responsive Design** - Optimized for mobile and desktop
+- **Performance Optimized** - Lazy loading and Next.js optimization
+
+### Why Local Images Over S3?
+
+While AWS S3 integration is available (`src/lib/s3ImageUtils.ts`), we chose local images because:
+
+- **Next.js Optimization** - Automatic WebP conversion and responsive images
+- **No External Dependencies** - No AWS costs or API rate limits
+- **Faster Development** - No network requests during development
+- **Simplified Deployment** - Images deploy with the application
+- **Better Performance** - CDN-like performance with Next.js optimization
+- **Cost Effective** - No additional cloud storage costs
+
+### Advanced Configuration
+
+For enterprise needs, the system supports:
+
+- **Environment-based configuration** - Switch between local/S3/Cloudinary
+- **Bulk image operations** - Batch upload and processing utilities
+- **Image validation** - Automatic format and size validation
+- **Fallback handling** - Graceful degradation for missing images
+
 ## 🔧 Configuration
 
 ### Environment Variables
@@ -197,6 +308,11 @@ Create a `.env.local` file for environment-specific configurations:
 ```env
 NEXT_PUBLIC_SITE_URL=https://pureluxebeauty.com
 NEXT_PUBLIC_WHATSAPP_NUMBER=your-whatsapp-number
+
+# Image Storage (optional - defaults to local)
+IMAGE_STORAGE_TYPE=local
+NEXT_PUBLIC_S3_BUCKET_URL=https://your-bucket.s3.amazonaws.com
+NEXT_PUBLIC_CLOUDFRONT_URL=https://your-distribution.cloudfront.net
 ```
 
 ### Path Aliases

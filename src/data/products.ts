@@ -1,4 +1,5 @@
 import { Product } from '../types';
+import { getMainImage, getAdditionalImages } from './productImages';
 
 // Sample product data for new arrivals
 export const newArrivals: Product[] = [
@@ -7,7 +8,8 @@ export const newArrivals: Product[] = [
     name: 'Vitamin C Brightening Serum',
     brand: 'GlowLux',
     price: '$45.99',
-    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop&crop=center',
+    image: getMainImage('na-001'),
+    images: getAdditionalImages('na-001'),
     category: 'serum',
     badge: 'new',
     description: 'Powerful vitamin C serum that brightens skin and reduces dark spots'
@@ -17,7 +19,8 @@ export const newArrivals: Product[] = [
     name: 'Hydrating Night Cream',
     brand: 'PureSkin',
     price: '$32.50',
-    image: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop&crop=center',
+    image: getMainImage('na-002'),
+    images: getAdditionalImages('na-002'),
     category: 'cream',
     badge: 'new',
     description: 'Rich moisturizing cream for overnight skin repair and hydration'
@@ -27,7 +30,8 @@ export const newArrivals: Product[] = [
     name: 'Gentle Exfoliating Scrub',
     brand: 'NaturalGlow',
     price: '$28.75',
-    image: 'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=400&h=400&fit=crop&crop=center',
+    image: getMainImage('na-003'),
+    images: getAdditionalImages('na-003'),
     category: 'scrub',
     badge: 'new',
     description: 'Natural exfoliating scrub with botanical extracts for smooth skin'
@@ -37,7 +41,8 @@ export const newArrivals: Product[] = [
     name: 'Anti-Aging Eye Treatment',
     brand: 'YouthRevive',
     price: '$55.00',
-    image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=400&h=400&fit=crop&crop=center',
+    image: getMainImage('na-004'),
+    images: getAdditionalImages('na-004'),
     category: 'treatment',
     badge: 'new',
     description: 'Advanced eye treatment to reduce fine lines and puffiness'
@@ -51,7 +56,8 @@ export const trendingProducts: Product[] = [
     name: 'Hyaluronic Acid Moisturizer',
     brand: 'AquaLux',
     price: '$38.99',
-    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=400&fit=crop&crop=center',
+    image: getMainImage('tr-001'),
+    images: getAdditionalImages('tr-001'),
     category: 'cream',
     badge: 'trending',
     description: 'Intense hydration with hyaluronic acid for plump, youthful skin'
@@ -61,7 +67,8 @@ export const trendingProducts: Product[] = [
     name: 'Retinol Renewal Serum',
     brand: 'SkinScience',
     price: '$49.99',
-    image: 'https://images.unsplash.com/photo-1570194065650-d99fb4bedf0a?w=400&h=400&fit=crop&crop=center',
+    image: getMainImage('tr-002'),
+    images: getAdditionalImages('tr-002'),
     category: 'serum',
     badge: 'trending',
     description: 'Gentle retinol formula for skin renewal and anti-aging benefits'
@@ -71,7 +78,8 @@ export const trendingProducts: Product[] = [
     name: 'Collagen Boost Treatment',
     brand: 'EliteBeauty',
     price: '$65.00',
-    image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&h=400&fit=crop&crop=center',
+    image: getMainImage('tr-003'),
+    images: getAdditionalImages('tr-003'),
     category: 'treatment',
     badge: 'trending',
     description: 'Professional-grade collagen treatment for firmer, younger-looking skin'
@@ -81,7 +89,8 @@ export const trendingProducts: Product[] = [
     name: 'Brightening Face Scrub',
     brand: 'RadiantSkin',
     price: '$24.99',
-    image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&h=400&fit=crop&crop=center',
+    image: getMainImage('tr-004'),
+    images: getAdditionalImages('tr-004'),
     category: 'scrub',
     badge: 'trending',
     description: 'Illuminating scrub with natural brightening agents'

@@ -24,6 +24,22 @@ vi.mock('next/image', () => ({
   ),
 }))
 
+// Mock ImageGallery component
+vi.mock('./ImageGallery', () => ({
+  ImageGallery: ({ isOpen, productName }: any) => 
+    isOpen ? <div data-testid="image-gallery">{productName} Gallery</div> : null
+}))
+
+// Mock utils to avoid canvas errors
+vi.mock('@/lib/utils', () => ({
+  cn: (...classes: any[]) => classes.filter(Boolean).join(' '),
+  generateProductAltText: (name: string, brand: string) => 
+    `${name} by ${brand} - Premium beauty product available at Pureluxe Beauty`,
+  getImageSizes: () => '(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw',
+  getImageQuality: () => 85,
+  generateBlurDataURL: () => 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k='
+}))
+
 describe('Card', () => {
   it('renders with default props', () => {
     render(<Card>Card content</Card>)
@@ -114,6 +130,45 @@ describe('ProductCard', () => {
     
     const image = screen.getByAltText('Vitamin C Serum by SkinCare Pro - Premium beauty product available at Pureluxe Beauty')
     expect(image).toHaveAttribute('src', '/test-image.jpg')
+  })
+
+  it('shows multiple images indicator when images are provided', () => {
+    const mockImages = [
+      { src: '/image1.jpg', alt: 'Image 1' },
+      { src: '/image2.jpg', alt: 'Image 2' }
+    ]
+    render(<ProductCard {...mockProduct} images={mockImages} />)
+    
+    expect(screen.getByText('3')).toBeInTheDocument() // Main image + 2 additional = 3
+  })
+
+  it('shows gallery overlay on hover when multiple images exist', () => {
+    const mockImages = [
+      { src: '/image1.jpg', alt: 'Image 1' }
+    ]
+    render(<ProductCard {...mockProduct} images={mockImages} />)
+    
+    expect(screen.getByText('View Gallery')).toBeInTheDocument()
+  })
+
+  it('opens image gallery when card with multiple images is clicked', () => {
+    const mockImages = [
+      { src: '/image1.jpg', alt: 'Image 1' }
+    ]
+    render(<ProductCard {...mockProduct} images={mockImages} />)
+    
+    const card = screen.getByTestId('product-card-1')
+    fireEvent.click(card)
+    
+    expect(screen.getByTestId('image-gallery')).toBeInTheDocument()
+    expect(screen.getByText('Vitamin C Serum Gallery')).toBeInTheDocument()
+  })
+
+  it('does not show gallery features for single image products', () => {
+    render(<ProductCard {...mockProduct} />)
+    
+    expect(screen.queryByText('View Gallery')).not.toBeInTheDocument()
+    expect(screen.queryByText('1')).not.toBeInTheDocument()
   })
 })
 

@@ -1,12 +1,19 @@
 // Core data models for the Pureluxe Beauty application
 import React from 'react';
 
+export interface ProductImage {
+  src: string;
+  alt?: string;
+  isMain?: boolean;
+}
+
 export interface Product {
   id: string;
   name: string;
   brand: string;
   price: string;
-  image: string;
+  image: string; // Main image for backward compatibility
+  images?: ProductImage[]; // Additional images for gallery
   category: 'serum' | 'cream' | 'scrub' | 'treatment';
   badge?: 'new' | 'trending';
   description?: string;

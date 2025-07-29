@@ -79,6 +79,7 @@ export const ProductSection = React.forwardRef<HTMLElement, ProductSectionProps>
                   name={product.name}
                   brand={product.brand}
                   image={product.image}
+                  images={product.images}
                   badge={product.badge}
                   className="w-full max-w-sm"
                   priority={index < 4} // Load first 4 images with priority
