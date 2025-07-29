@@ -174,7 +174,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
           aria-hidden="true"
           onClick={() => setIsMenuOpen(false)}
         />
@@ -184,7 +184,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       <div
         id="mobile-menu"
         className={cn(
-          "mobile-menu fixed top-0 right-0 h-full w-80 max-w-sm bg-white shadow-xl transform transition-transform duration-300 ease-in-out z-50 md:hidden",
+          "mobile-menu fixed top-0 right-0 h-full w-80 max-w-sm bg-white/98 backdrop-blur-md shadow-2xl border-l border-gray-200 transform transition-transform duration-300 ease-in-out z-50 md:hidden",
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
         role="dialog"
@@ -193,7 +193,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       >
         <div className="flex flex-col h-full">
           {/* Mobile Menu Header */}
-          <div className="flex items-center justify-between p-4 border-b border-gray-200">
+          <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-white">
             <h2
               id="mobile-menu-title"
               className="text-lg font-semibold text-gray-900"
@@ -212,7 +212,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
 
           {/* Mobile Menu Navigation */}
           <nav
-            className="flex-1 px-4 py-6 space-y-4"
+            className="flex-1 px-4 py-6 space-y-4 bg-white"
             role="navigation"
             aria-label="Mobile navigation"
           >
@@ -233,7 +233,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           </nav>
 
           {/* Mobile Menu CTA */}
-          <div className="p-4 border-t border-gray-200">
+          <div className="p-4 border-t border-gray-200 bg-white">
             <Button
               variant="primary"
               size="lg"
