@@ -3,7 +3,7 @@
  * Use this if you want to store images on S3 instead of locally
  */
 
-const S3_BUCKET_URL = process.env.NEXT_PUBLIC_S3_BUCKET_URL || 'https://your-bucket.s3.amazonaws.com'
+// const S3_BUCKET_URL = process.env.NEXT_PUBLIC_S3_BUCKET_URL || 'https://your-bucket.s3.amazonaws.com'
 
 export interface S3ImageConfig {
   bucket: string
