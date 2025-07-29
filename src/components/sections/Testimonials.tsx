@@ -31,7 +31,7 @@ const Testimonials: React.FC = () => {
   // Auto-advance timer
   useEffect(() => {
     if (!isPaused && !isHovered) {
-      const interval = setInterval(nextSlide, 5000);
+      const interval = setInterval(nextSlide, 10000);
       return () => clearInterval(interval);
     }
     return undefined;

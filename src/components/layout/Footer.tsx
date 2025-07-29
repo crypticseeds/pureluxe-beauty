@@ -61,7 +61,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
   const businessHours = [
     { day: 'Monday - Friday', hours: '9:00 AM - 7:00 PM' },
     { day: 'Saturday', hours: '10:00 AM - 6:00 PM' },
-    { day: 'Sunday', hours: '12:00 PM - 5:00 PM' }
+    { day: 'Sunday', hours: 'Closed' }
   ]
 
   const handleLinkClick = (href: string) => {
